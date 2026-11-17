@@ -14,8 +14,7 @@ def home():
         city = request.form["city"]
 
         try:
-            # Get city location
-            url = "https://geocoding-api.open-meteo.com/v1/search"
+            
             response = requests.get(url, params={
                 "name": city,
                 "count": 1
@@ -29,8 +28,7 @@ def home():
                 latitude = location["latitude"]
                 longitude = location["longitude"]
 
-                # Get weather details
-                url = "https://api.open-meteo.com/v1/forecast"
+                
 
                 response = requests.get(url, params={
                     "latitude": latitude,
